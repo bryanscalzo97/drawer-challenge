@@ -10,10 +10,11 @@ import {
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Import screens
 import Screen1 from './src/screens/Screen1';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Screen2 from './src/screens/Screen2';
 import CartScreen from './src/screens/CartScreen';
 import FavouritesScreen from './src/screens/FavouritesScreen';
@@ -21,6 +22,7 @@ import OrdersScreen from './src/screens/OrdersScreen';
 
 // Create navigators
 const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 // Home Stack Navigator
@@ -51,6 +53,73 @@ function HomeStack() {
   );
 }
 
+// Tab Navigator (inside drawer)
+function TabNavigator() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: {
+          backgroundColor: '#fff',
+          borderTopWidth: 1,
+          borderTopColor: '#e0e0e0',
+          paddingBottom: 5,
+          paddingTop: 5,
+          height: 60,
+        },
+        tabBarActiveTintColor: '#007AFF',
+        tabBarInactiveTintColor: '#8E8E93',
+      }}
+    >
+      <Tab.Screen
+        name="HomeStack"
+        component={HomeStack}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size }) => (
+            <View
+              style={[
+                styles.tabIcon,
+                { backgroundColor: color, width: size, height: size },
+              ]}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Cart"
+        component={CartScreen}
+        options={{
+          tabBarLabel: 'Cart',
+          tabBarIcon: ({ color, size }) => (
+            <View
+              style={[
+                styles.tabIcon,
+                { backgroundColor: color, width: size, height: size },
+              ]}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Favourites"
+        component={FavouritesScreen}
+        options={{
+          tabBarLabel: 'Favourites',
+          tabBarIcon: ({ color, size }) => (
+            <View
+              style={[
+                styles.tabIcon,
+                { backgroundColor: color, width: size, height: size },
+              ]}
+            />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
 // Custom Drawer Content
 function CustomDrawerContent(props: any) {
   return (
@@ -61,23 +130,9 @@ function CustomDrawerContent(props: any) {
 
       <TouchableOpacity
         style={styles.drawerItem}
-        onPress={() => props.navigation.navigate('HomeStack')}
+        onPress={() => props.navigation.navigate('MainTabs')}
       >
         <Text style={styles.drawerItemText}>Home</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.drawerItem}
-        onPress={() => props.navigation.navigate('Cart')}
-      >
-        <Text style={styles.drawerItemText}>Cart</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.drawerItem}
-        onPress={() => props.navigation.navigate('Favourites')}
-      >
-        <Text style={styles.drawerItemText}>Favourites</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -111,24 +166,10 @@ function App() {
           }}
         >
           <Drawer.Screen
-            name="HomeStack"
-            component={HomeStack}
+            name="MainTabs"
+            component={TabNavigator}
             options={{
               drawerLabel: 'Home',
-            }}
-          />
-          <Drawer.Screen
-            name="Cart"
-            component={CartScreen}
-            options={{
-              drawerLabel: 'Cart',
-            }}
-          />
-          <Drawer.Screen
-            name="Favourites"
-            component={FavouritesScreen}
-            options={{
-              drawerLabel: 'Favourites',
             }}
           />
           <Drawer.Screen
@@ -178,6 +219,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
     fontWeight: '500',
+  },
+  tabIcon: {
+    borderRadius: 4,
   },
 });
 
