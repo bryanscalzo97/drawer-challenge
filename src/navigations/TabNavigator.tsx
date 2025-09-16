@@ -5,8 +5,18 @@ import { View, StyleSheet } from 'react-native';
 import CartScreen from '../screens/CartScreen';
 import FavouritesScreen from '../screens/FavouritesScreen';
 import HomeStack from './HomeStack';
+import { RootTabParamList } from './types';
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<RootTabParamList>();
+
+const TabIcon = ({ color, size }: { color: string; size: number }) => (
+  <View
+    style={[
+      styles.tabIcon,
+      { backgroundColor: color, width: size, height: size },
+    ]}
+  />
+);
 
 const TabNavigator = () => {
   return (
@@ -30,14 +40,7 @@ const TabNavigator = () => {
         component={HomeStack}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <View
-              style={[
-                styles.tabIcon,
-                { backgroundColor: color, width: size, height: size },
-              ]}
-            />
-          ),
+          tabBarIcon: TabIcon,
         }}
       />
       <Tab.Screen
@@ -45,14 +48,7 @@ const TabNavigator = () => {
         component={CartScreen}
         options={{
           tabBarLabel: 'Cart',
-          tabBarIcon: ({ color, size }) => (
-            <View
-              style={[
-                styles.tabIcon,
-                { backgroundColor: color, width: size, height: size },
-              ]}
-            />
-          ),
+          tabBarIcon: TabIcon,
         }}
       />
       <Tab.Screen
@@ -60,14 +56,7 @@ const TabNavigator = () => {
         component={FavouritesScreen}
         options={{
           tabBarLabel: 'Favourites',
-          tabBarIcon: ({ color, size }) => (
-            <View
-              style={[
-                styles.tabIcon,
-                { backgroundColor: color, width: size, height: size },
-              ]}
-            />
-          ),
+          tabBarIcon: TabIcon,
         }}
       />
     </Tab.Navigator>

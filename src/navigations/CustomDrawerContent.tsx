@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { DrawerContentComponentProps } from '@react-navigation/drawer';
 
-// TODO: add type
-const CustomDrawerContent = ({ navigation }: any) => {
+const CustomDrawerContent = ({ navigation }: DrawerContentComponentProps) => {
   return (
     <View style={styles.drawerContainer}>
       <View style={styles.drawerHeader}>

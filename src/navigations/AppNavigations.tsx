@@ -6,22 +6,15 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import TabNavigator from './TabNavigator';
 import OrdersScreen from '../screens/OrdersScreen';
 import CustomDrawerContent from './CustomDrawerContent';
+import { RootStackParamList } from './types';
 
-const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator<RootStackParamList>();
 
 const AppNavigations = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Drawer.Navigator
-          drawerContent={props => <CustomDrawerContent {...props} />}
-          screenOptions={{
-            headerShown: false,
-            drawerStyle: {
-              width: 280,
-            },
-          }}
-        >
+        <Drawer.Navigator drawerContent={CustomDrawerContent}>
           <Drawer.Screen
             name="MainTabs"
             component={TabNavigator}
