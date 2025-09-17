@@ -1,18 +1,28 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 
 import CartScreen from '../screens/CartScreen';
 import FavouritesScreen from '../screens/FavouritesScreen';
 import HomeStack from './HomeStack';
 import { RootTabParamList } from './types';
+import {
+  tabNavigatorStyles,
+  tabBarStyle,
+  tabBarColors,
+} from './styles/TabNavigatorStyles';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
-const TabIcon = ({ color, size }: { color: string; size: number }) => (
+type TabIconProps = {
+  color: string;
+  size: number;
+};
+
+const TabIcon = ({ color, size }: TabIconProps) => (
   <View
     style={[
-      styles.tabIcon,
+      tabNavigatorStyles.tabIcon,
       { backgroundColor: color, width: size, height: size },
     ]}
   />
@@ -23,16 +33,9 @@ const TabNavigator = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: {
-          backgroundColor: '#fff',
-          borderTopWidth: 1,
-          borderTopColor: '#e0e0e0',
-          paddingBottom: 5,
-          paddingTop: 5,
-          height: 60,
-        },
-        tabBarActiveTintColor: '#007AFF',
-        tabBarInactiveTintColor: '#8E8E93',
+        tabBarStyle,
+        tabBarActiveTintColor: tabBarColors.active,
+        tabBarInactiveTintColor: tabBarColors.inactive,
       }}
     >
       <Tab.Screen
@@ -62,11 +65,5 @@ const TabNavigator = () => {
     </Tab.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  tabIcon: {
-    borderRadius: 4,
-  },
-});
 
 export default TabNavigator;
