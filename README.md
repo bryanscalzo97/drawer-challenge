@@ -1,97 +1,123 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Drawer Challenge - React Native Navigation App
 
-# Getting Started
+## Project Description
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+This project is a React Native application that implements a navigation system using **React Navigation** with a **Drawer Navigator** as the parent component, containing a **Bottom Tab Navigator** and a nested **Stack Navigator**. The application demonstrates React Native navigation best practices.
 
-## Step 1: Start Metro
+### Navigation Structure
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```
+Drawer Navigator (Parent)
+├── MainTabs (Bottom Tab Navigator)
+│   ├── HomeStack (Stack Navigator)
+│   │   ├── Screen1
+│   │   └── Screen2
+│   ├── Cart
+│   └── Favorites
+└── Orders (Direct Drawer Screen)
 ```
 
-## Step 2: Build and run your app
+### Architecture Decision
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+**Why React Navigation Drawer?**
 
-### Android
+1. **Consistency**: React Navigation provides a consistent and well-documented API
+2. **Development Time**: In a short period, it's more efficient to use proven native components
+3. **Maintainability**: Less custom code = fewer bugs and easier maintenance
+4. **Performance**: Native navigators are optimized for React Native
+5. **Ecosystem**: Wide community support and regular updates
 
-```sh
-# Using npm
-npm run android
+## Implemented Features
 
-# OR using Yarn
+### Complete Navigation
+
+- **Drawer Navigator** with custom side menu
+- **Bottom Tab Navigator** with 3 main tabs
+- **Nested Stack Navigator** for screen-to-screen navigation
+- **Direct navigation** from drawer to Orders screen
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   └── DrawerSceneWrapper.tsx    # Drawer animations
+├── navigations/
+│   ├── AppNavigations.tsx        # Main navigator
+│   ├── TabNavigator.tsx          # Bottom Tab Navigator
+│   ├── HomeStack.tsx             # Stack Navigator for Home
+│   ├── CustomDrawerContent.tsx   # Custom drawer content
+│   ├── types.tsx                 # TypeScript types
+│   └── styles/                   # Separate style files
+├── screens/
+│   ├── Screen1.tsx               # Main screen
+│   ├── Screen2.tsx               # Second screen
+│   ├── CartScreen.tsx            # Cart screen
+│   ├── FavoritesScreen.tsx      # Favorites screen
+│   └── OrdersScreen.tsx          # Orders screen
+└── types/
+    └── vector-icons.d.ts         # TypeScript declarations
+```
+
+## Technologies Used
+
+### Core
+
+- **React Native** 0.81+
+- **TypeScript** for type safety
+- **React Navigation** for navigation
+
+## Technical Decisions
+
+### 1. **No Custom Animations with Reanimated**
+
+**Decision**: Use React Navigation's built-in animations only
+
+**Reasons**:
+
+- ✅ **Time constraints**: Focus on core functionality
+- ✅ **Stability**: Less complexity = fewer bugs
+- ✅ **Performance**: Native animations are optimized
+- ✅ **Simplicity**: Avoid over-engineering
+
+### 2. **File Architecture**
+
+**Decision**: Separate navigators and styles into individual files
+
+**Reasons**:
+
+- ✅ **Scalability**: Easy to add new screens
+- ✅ **Maintainability**: Organized and readable code
+- ✅ **Reusability**: Reusable styles and components
+- ✅ **Testing**: Easier to test individual components
+
+## How to Run the Project
+
+### Prerequisites
+
+- Node.js 16+
+- React Native CLI
+- Android Studio / Xcode
+- Yarn or npm
+
+### Installation
+
+```bash
+# Install dependencies
+yarn install
+
+# iOS
+cd ios && pod install && cd ..
+
+# Android
+# Make sure ANDROID_HOME is configured
+
+# Run
 yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
+# or
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 📝 Conclusion
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project demonstrates a solid implementation of complex navigation in React Native, prioritizing core functionality and stability over advanced features. The decision to use React Navigation Drawer resulted in faster development and more maintainable code. While React Native Reanimated was installed, it was not implemented in the final version, showing honest prioritization of core features over advanced animations.
