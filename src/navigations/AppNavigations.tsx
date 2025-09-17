@@ -7,7 +7,6 @@ import AnimatedTabNavigator from '../components/AnimatedTabNavigator';
 import OrdersScreen from '../screens/OrdersScreen';
 import CustomDrawerContent from './CustomDrawerContent';
 import { RootStackParamList } from './types';
-import DrawerSceneWrapper from '../components/DrawerSceneWrapper';
 
 const Drawer = createDrawerNavigator<RootStackParamList>();
 

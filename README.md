@@ -36,6 +36,8 @@ Drawer Navigator (Parent)
 - **Nested Stack Navigator** for screen-to-screen navigation
 - **Direct navigation** from drawer to Orders screen
 
+<<<<<<< HEAD
+
 ### UI/UX
 
 - **Responsive design** with thematic colors per screen
@@ -58,6 +60,10 @@ Drawer Navigator (Parent)
 - **RotateY animation** (0° → -15°) for 3D rotation effect
 - **Dynamic shadows** that change with drawer progress
 - **Smooth spring animations** with custom damping and stiffness
+
+=======
+
+> > > > > > > main
 
 ## 📁 Project Structure
 
@@ -121,20 +127,6 @@ src/
 - ✅ **Reusability**: Reusable styles and components
 - ✅ **Testing**: Easier to test individual components
 
-## Project Evaluation
-
-### Technical Score
-
-| Criterion         | Score | Justification                                        |
-| ----------------- | ----- | ---------------------------------------------------- |
-| **React Code**    | 8/10  | Optimizations with memo, TypeScript, clear structure |
-| **UI/UX**         | 8/10  | Clean design, 3D animations, premium feel            |
-| **Navigation**    | 9/10  | Perfect structure, complete types, smooth navigation |
-| **Functionality** | 8/10  | All screens functional, complete navigation          |
-| **Reanimated**    | 9/10  | 3D animations, spring effects, smooth performance    |
-
-**Total Score: 8.4/10**
-
 ## How to Run the Project
 
 ### Prerequisites
@@ -164,6 +156,11 @@ yarn ios
 
 ## 📝 Conclusion
 
+<<<<<<< HEAD
 This project demonstrates a solid implementation of complex navigation in React Native with advanced 3D animations. The decision to use React Navigation Drawer resulted in faster development and more maintainable code, while the implementation of React Native Reanimated adds a premium feel with smooth 3D drawer animations. The combination of solid navigation architecture and custom animations creates an engaging user experience.
 
-**The project successfully meets the challenge requirements and provides an excellent foundation for future enhancements.**
+# **The project successfully meets the challenge requirements and provides an excellent foundation for future enhancements.**
+
+This project demonstrates a solid implementation of complex navigation in React Native, prioritizing core functionality and stability over advanced features. The decision to use React Navigation Drawer resulted in faster development and more maintainable code. While React Native Reanimated was installed, it was not implemented in the final version, showing honest prioritization of core features over advanced animations.
+
+> > > > > > > main
