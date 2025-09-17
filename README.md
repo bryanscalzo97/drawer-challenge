@@ -1,5 +1,12 @@
 # Drawer Challenge - React Native Navigation App
 
+## Demo
+
+
+https://github.com/user-attachments/assets/731aa35b-7c9a-431d-8bd1-dd12c2ce782c
+
+
+
 ## Project Description
 
 This project is a React Native application that implements a navigation system using **React Navigation** with a **Drawer Navigator** as the parent component, containing a **Bottom Tab Navigator** and a nested **Stack Navigator**. The application demonstrates React Native navigation best practices.
@@ -36,34 +43,11 @@ Drawer Navigator (Parent)
 - **Nested Stack Navigator** for screen-to-screen navigation
 - **Direct navigation** from drawer to Orders screen
 
-<<<<<<< HEAD
-
 ### UI/UX
 
 - **Responsive design** with thematic colors per screen
-- **Optimized icons** using `react-native-vector-icons`
 - **Informative empty states** on each screen
 - **Functional navigation buttons** between screens
-
-### React Optimizations
-
-- **React.memo** for icon components
-- **Display names** for better debugging
-- **Separation of concerns** in style files
-- **TypeScript** for complete type safety
-
-### React Native Reanimated
-
-- **DrawerSceneWrapper** with 3D animations
-- **Scale animation** (1 → 0.8) when opening drawer
-- **TranslateX animation** (0 → 100px) for sliding effect
-- **RotateY animation** (0° → -15°) for 3D rotation effect
-- **Dynamic shadows** that change with drawer progress
-- **Smooth spring animations** with custom damping and stiffness
-
-=======
-
-> > > > > > > main
 
 ## 📁 Project Structure
 
@@ -98,8 +82,7 @@ src/
 
 ### Additional Libraries
 
-- **React Native Reanimated** 3.x for 3D animations
-- **React Native Vector Icons** for iconography
+- **React Native Reanimated** for 3D animations
 - **React Native Gesture Handler** for gestures
 - **React Native Safe Area Context** for safe area handling
 
@@ -113,7 +96,7 @@ src/
 
 - ✅ **Enhanced UX**: 3D rotation creates immersive drawer experience
 - ✅ **Visual appeal**: Scale and translate effects make navigation feel premium
-- ✅ **Performance**: Reanimated runs on UI thread for smooth 60fps animations
+- ✅ **Performance**: Reanimated runs on UI thread for smooth animations
 - ✅ **Customization**: Full control over animation timing and easing
 
 ### 2. **File Architecture**
@@ -153,14 +136,3 @@ yarn android
 # or
 yarn ios
 ```
-
-## 📝 Conclusion
-
-<<<<<<< HEAD
-This project demonstrates a solid implementation of complex navigation in React Native with advanced 3D animations. The decision to use React Navigation Drawer resulted in faster development and more maintainable code, while the implementation of React Native Reanimated adds a premium feel with smooth 3D drawer animations. The combination of solid navigation architecture and custom animations creates an engaging user experience.
-
-# **The project successfully meets the challenge requirements and provides an excellent foundation for future enhancements.**
-
-This project demonstrates a solid implementation of complex navigation in React Native, prioritizing core functionality and stability over advanced features. The decision to use React Navigation Drawer resulted in faster development and more maintainable code. While React Native Reanimated was installed, it was not implemented in the final version, showing honest prioritization of core features over advanced animations.
-
-> > > > > > > main
