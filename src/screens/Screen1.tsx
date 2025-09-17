@@ -1,41 +1,44 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useNavigation, DrawerActions } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
+import Header from '../components/Header';
+import DrawerSceneWrapper from '../components/DrawerSceneWrapper';
 
 const Screen1 = () => {
   const navigation = useNavigation<any>(); // TODO: add type
 
-  const openDrawer = () => {
-    navigation.dispatch(DrawerActions.openDrawer());
-  };
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Screen 1</Text>
-      <Text style={styles.subtitle}>
-        Tap the menu button to see 3D animation!
-      </Text>
+    <DrawerSceneWrapper>
+      <View style={styles.container}>
+        <Header title="Screen 1" />
 
-      <TouchableOpacity style={styles.button} onPress={openDrawer}>
-        <Text style={styles.buttonText}>Open Drawer (3D Animation)</Text>
-      </TouchableOpacity>
+        <View style={styles.content}>
+          <Text style={styles.title}>Welcome to Screen 1</Text>
+          <Text style={styles.subtitle}>
+            Tap the menu button in the header to see 3D animation!
+          </Text>
 
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Screen2')}
-      >
-        <Text style={styles.buttonText}>Go to Screen 2</Text>
-      </TouchableOpacity>
-    </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('Screen2')}
+          >
+            <Text style={styles.buttonText}>Go to Screen 2</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </DrawerSceneWrapper>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#f8f9fa',
+  },
+  content: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f8f9fa',
     padding: 20,
   },
   title: {

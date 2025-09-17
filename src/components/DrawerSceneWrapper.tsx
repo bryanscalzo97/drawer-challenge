@@ -19,8 +19,8 @@ const DrawerSceneWrapper = ({ children }: DrawerSceneWrapperProps) => {
     const progressValue = progress.value;
 
     return {
-      scale: interpolate(progressValue, [0, 1], [1, 0.9], 'clamp'),
-      translateX: interpolate(progressValue, [0, 1], [0, 0], 'clamp'),
+      scale: interpolate(progressValue, [0, 1], [1, 0.85], 'clamp'),
+      translateX: interpolate(progressValue, [0, 1], [0, 80], 'clamp'),
       rotateY: interpolate(progressValue, [0, 1], [0, -15], 'clamp'),
       borderRadius: interpolate(progressValue, [0, 1], [0, 20], 'clamp'),
       shadowOpacity: interpolate(progressValue, [0, 1], [0, 0.3], 'clamp'),
