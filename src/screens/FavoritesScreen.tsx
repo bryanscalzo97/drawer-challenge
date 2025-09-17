@@ -3,15 +3,15 @@ import { View, Text, StyleSheet } from 'react-native';
 import Header from '../components/Header';
 import DrawerSceneWrapper from '../components/DrawerSceneWrapper';
 
-const CartScreen = () => {
+const FavoritesScreen = () => {
   return (
     <DrawerSceneWrapper>
       <View style={styles.container}>
-        <Header title="Shopping Cart" />
+        <Header title="Favorites" />
 
         <View style={styles.content}>
-          <Text style={styles.title}>🛒 Your Cart</Text>
-          <Text style={styles.subtitle}>Your shopping cart is empty</Text>
+          <Text style={styles.title}>❤️ Your Favorites</Text>
+          <Text style={styles.subtitle}>No favorites yet</Text>
         </View>
       </View>
     </DrawerSceneWrapper>
@@ -21,7 +21,7 @@ const CartScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff5f5',
+    backgroundColor: '#fef7f7',
   },
   content: {
     flex: 1,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#e74c3c',
+    color: '#e91e63',
     marginBottom: 10,
   },
   subtitle: {
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CartScreen;
+export default FavoritesScreen;
