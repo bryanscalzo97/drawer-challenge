@@ -8,7 +8,7 @@ export type RootDrawerParamList = {
 export type RootTabParamList = {
   HomeStack: NavigatorScreenParams<RootHomeStackParamList>;
   Cart: undefined;
-  Favourites: undefined;
+  Favorites: undefined;
 };
 
 export type RootHomeStackParamList = {
