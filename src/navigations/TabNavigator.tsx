@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View } from 'react-native';
 
 import CartScreen from '../screens/CartScreen';
-import FavouritesScreen from '../screens/FavouritesScreen';
+import FavoritesScreen from '../screens/FavoritesScreen';
 import HomeStack from './HomeStack';
 import { RootTabParamList } from './types';
 import {
@@ -55,10 +55,10 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Favourites"
-        component={FavouritesScreen}
+        name="Favorites"
+        component={FavoritesScreen}
         options={{
-          tabBarLabel: 'Favourites',
+          tabBarLabel: 'Favorites',
           tabBarIcon: TabIcon,
         }}
       />
